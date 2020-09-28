@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block title %} Личный кабинет {% endblock %}
+
+{% block content %}
+<h1>{{user.username}} </h1>
+       <a href="/changeAccData" role="button" >Редактивировать</a>
+
+  {% for human in our_user%}
+<h3>{{human.name}}      {{human.surname}}</h3>
+<h3>Пол: {{human.gender}}</h3>
+<h3>Телефон: {{human.phone}} </h3>
+<h3>Адрес: {{human.adress}}</h3>
+<h3>Город: {{human.city}}</h3>
+{%endfor%}
+{% endblock %}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+ {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="{%static 'image/icon0.png'%}" type="image/x-icon">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%}O.Z.Z.E Shop {% endblock %}</title>
+    <link rel="stylesheet" href="{%static 'ozze_style/style.css'%}">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8c5f8983b2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<header class="header" id="header">
+		<div class="container">
+			<div class="header__inner">
+
+				<div class="header__logo" data-scroll="#intro"><a href="/main" class="header__logo-link"><h2>O.Z.Z.E</h2><h4>casual women's coat</h4></a></div>
+
+				<nav class="nav" id="nav">
+					<div class="nav__1row">
+						<a href="/catalog" class="nav__link">Каталог</a>
+						<a href="#" class="nav__link">Избранное</a>
+						<a href="#" class="nav__link">Новости</a>
+						<a href="/size_chart" class="nav__link">Размерная таблица</a>
+					</div>
+					<div class="nav__2row">
+						<a href="/coat_catalog" class="nav__link">Пальто</a>
+						<a href="/dress_catalog" class="nav__link">Платья</a>
+						<a href="/parka_catalog" class="nav__link">Парки</a>
+						<a href="/facemask_catalog" class="nav__link">Защитные маски</a>
+						<a href="/sale_catalog" class="nav__link nav__link-sale">Sale</a>
+					</div>
+
+				</nav>
+
+				<div class="header__contacts">
+					<div class="header__contacts-icon"><i class="fas fa-phone-alt"></i></div>
+					<div class="header__contacts-num-container">
+						<div class="header__contacts-number">+380 (50) 303 23 48</div>
+						<div class="header__contacts-number">+380 (63) 862 97 83</div>
+					</div>
+				</div>
+
+				<div class="header__icons">
+					<span class="header__icon">
+						<a href="#"><i class="fas fa-search"></i></a>
+					</span>
+					<span class="header__icon">
+						<a href="#"><i class="far fa-user"></i></a>
+					</span>
+					<span class="header__icon">
+						<a href="#"><i class="far fa-heart"></i></a>
+					</span>
+					<span class="header__icon">
+						<a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+					</span>
+				</div>
+
+
+				<button class="nav-toggle" type="button" id="nav_toggle">
+					<span class="nav-toggle__item">Menu</span>
+				</button>
+
+			</div>
+		</div>
+	</header>
+
+	<main>
+
+{% block content %}
+		<section class="section intro__showcase">
+			<div class="container">
+				<div class="showcase__wrap">
+				<div class="showcase__col">
+					<div class="showcase__item">
+						<a href="#"><img class="showcase__img" src="{%static 'image/showcase6500.jpg'%}" alt=""></a>
+					</div>
+					<div class="showcase__item-line">
+						<div class="showcase__item showcase__item-down showcase__item-down1">
+							<a href="#" ><img class="showcase__img showcase__img-down" src="{%static 'image/showcase32510.jpg'%}" alt=""></a>
+						</div>
+						<div class="showcase__item showcase__item-down showcase__item-down2">
+							<a href="#"><img class="showcase__img showcase__img-down" src="{%static 'image/showcase32520.jpg'%}" alt=""></a>
+						</div>
+					</div>
+				</div>
+				<div class="showcase__col">
+					<div class="showcase__item">
+						<a href="#"><img class="showcase__img showcase__img-side" src="{%static 'image/showcase3300.jpg'%}" alt=""></a>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="section advan__section">
+			<div class="container">
+				<div class="advantages__wrap">
+					<div class="advan__inner">
+						<div class="advan__title"><h2>Our Advantages</h2></div>
+						<div class="advan__rows-wrap">
+						<div class="advan__row">
+							<div class="advan__item">
+								<div class="advan__item-icon"><i class="far fa-gem"></i></div>
+								<div class="advan__item-title"><h3>Качество</h3></div>
+								<div class="advan__item-text">Высокое качество продукции — самое главное!</div>
+							</div>
+							<div class="advan__item">
+								<div class="advan__item-icon"><i class="fas fa-user-friends"></i></div>
+								<div class="advan__item-title"><h3>Контакность</h3></div>
+								<div class="advan__item-text">Мы всегда открыты к контакту</div>
+							</div>
+						</div>
+						<div class="advan__row">
+							<div class="advan__item">
+								<div class="advan__item-icon"><i class="fas fa-tag"></i></div>
+								<div class="advan__item-title"><h3>Цены от производителя</h3></div>
+								<div class="advan__item-text">Нам всегда приятно радовать приятными ценами</div>
+							</div>
+							<div class="advan__item">
+								<div class="advan__item-icon"><i class="fas fa-tshirt"></i></i></div>
+								<div class="advan__item-title"><h3>Разнообразие</h3></div>
+								<div class="advan__item-text">Мы всегда подберем товар именно для Вас</div>
+							</div>
+						</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="section section-category">
+			<div class="container">
+				<div class="category__wrap">
+					<div class="category__title">
+						<div class="category__title-container">
+							<i class="fas fa-shopping-bag"></i>Категории
+						</div>
+					</div>
+
+					<div class="category__row">
+						<div class="category__item">
+							<div><a href="#"><img class = "category__item-img" height="400" width="224" src="{%static 'image/category1.jpg'%}" alt=""></a></div>
+							<div class="category__item-info">
+							<div class="category__item-title"><h3>Маски защитные</h3></div>
+							<div class="category__item-text"><p>2 товара</p></div>
+							</div>
+						</div>
+						<div class="category__item">
+							<div><a href="#"><img class = "category__item-img" height="400" width="224" src="{%static 'image/category2.jpg'%}" alt=""></a></div>
+							<div class="category__item-info">
+							<div class="category__item-title"><h3>Пальто женские</h3></div>
+							<div class="category__item-text"><p>42 товара</p></div>
+							</div>
+						</div>
+						<div class="category__item">
+							<div><a href="#"><img class = "category__item-img" height="400" width="224" src="{%static 'image/category3.jpg'%}" alt=""></a></div>
+							<div class="category__item-info">
+							<div class="category__item-title"><h3>Парки</h3></div>
+							<div class="category__item-text"><p>7 товары</p></div>
+							</div>
+						</div>
+						<div class="category__item">
+							<div><a href="#"><img class = "category__item-img" height="400" width="224" src="{%static 'image/category4.jpg'%}" alt=""></a></div>
+							<div class="category__item-info">
+							<div class="category__item-title"><h3>Платья</h3></div>
+							<div class="category__item-text"><p>9 товара</p></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section-new">
+			<div class="container">
+				<div class="category__title">
+						<div class="category__title-container new-on-site-title">
+							<i class="far fa-calendar-plus"></i>Новое на сайте
+						</div>
+				</div>
+
+				<div class="slider">
+   					<div class="slider__wrapper">
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide1.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Маски защитные
+							<div class="newlist__item-title"><h3>Маска защитная голубая для лица</h3></div>
+							<div class="newlist__item-text"><p>13 грн.</p></div>
+							</div>
+
+      					</div>
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide2.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Маски защитные
+							<div class="newlist__item-title"><h3>Маска защитная черная для лица</h3></div>
+							<div class="newlist__item-text"><p>13 грн.</p></div>
+							</div>
+
+      					</div>
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide3.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Пальто женские
+							<div class="newlist__item-title"><h3>Весеннее пальто в клетку</h3></div>
+							<div class="newlist__item-text"><p>499 грн.</p></div>
+							</div>
+
+      					</div>
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide4.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Пальто женские
+							<div class="newlist__item-title"><h3>Весеннее пальто в клетку</h3></div>
+							<div class="newlist__item-text"><p>499 грн.</p></div>
+							</div>
+
+      					</div>
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide5.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Пальто женские
+							<div class="newlist__item-title"><h3>Весеннее пальто в клетку</h3></div>
+							<div class="newlist__item-text"><p>499 грн.</p></div>
+							</div>
+
+      					</div>
+      					<div class="slider__item">
+							<div class="slider__item-img"><a href="#"><img class = "newlist__item-img" src="{%static 'image/slide6.jpg'%}" alt=""></a></div>
+							<div class="newlist__item-info"> Пальто женские
+							<div class="newlist__item-title"><h3>Весеннее пальто в клетку</h3></div>
+							<div class="newlist__item-text"><p>499 грн.</p></div>
+							</div>
+
+      					</div>
+
+    				</div>
+    				<a class="slider__control slider__control_left" href="#" role="button"></a>
+    				<a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+  				</div>
+
+			</div>
+		</section>
+
+		<script src="{%static 'js/slider-script.js'%}"></script>
+
+		<section class="section">
+			<div class="container">
+
+			</div>
+		</section>
+
+
+{% endblock %}
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__wrap">
+
+					<div class="footer__item">
+						<div class="footer__item-title">О нас</div>
+							<div class="footer__item-links">
+								<a href="#" class="footer__link">Бренд</a>
+								<a href="#" class="footer__link">Сотрудничество</a>
+								<a href="#" class="footer__link">Оптовым клиентам</a>
+							</div>
+					</div>
+
+					<div class="footer__item">
+						<div class="footer__item-title">Вопросы и ответы</div>
+							<div class="footer__item-links">
+								<a href="#" class="footer__link">Размерная таблица</a>
+								<a href="#" class="footer__link">Доставка и оплата</a>
+								<a href="#" class="footer__link">Обмен и возврат</a>
+								<a href="#" class="footer__link">Вакансии</a>
+							</div>
+					</div>
+
+					<div class="footer__item">
+						<div class="footer__item-title">Наш модный блог</div>
+							<div class="footer__item-links">
+								<a href="#" class="footer__link">Бренд</a>
+								<a href="#" class="footer__link">Сотрудничество</a>
+							</div>
+					</div>
+
+					<div class="footer__item">
+						<div class="footer__item-title">Контакты</div>
+							<div class="footer__item-links">
+								<a href="#" class="footer__link">Компания "O.Z.Z.E"</a>
+								<a href="#" class="footer__link">+380 63 862 97 83</a>
+								<a href="#" class="footer__link">Украина, г. Харьков, ул. Полтавский шлях</a>
+								<a href="#" class="footer__link">email: ozzeshop@gmail.com</a>
+							</div>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+
+
+
+
+	</main>
+
+</body>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block title %} Пальто OZZE {% endblock %}
+
+ {% load static %}
+{% block content %}
+
+{% for item in products%}
+<h1><a href="{% url 'coat_detail' pk=item.pk%}">{{item.code}}</a></h1>
+<h3>{{item.name}}</h3>
+<h3>{{item.price}}</h3>
+<h3>{{item.color}}</h3>
+<h3>{{item.size}}</h3>
+<h3>{{item.length}}</h3>
+<h3>Состав ткани: {{item.fabric_structure}}</h3>
+<h3>Длина пальто по центру спинки: {{item.length_center_back}}</h3>
+<h3>Длина рукава от горловины: {{item.length_sleeve_neck}}</h3>
+
+<text>{{item.description}}</text>
+{%if item.sale > 0%}
+<h3>Sale {{item.sale}}%</h3>
+{% endif %}
+
+<form action ='/coat_cart_add/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="AddToCart" value="{{item.id}} {{item.type}}">Добавить в корзину</button>
+</form>
+
+
+<h3>  <img src = "{{item.picture.url}}" width="300"></h3>
+<br><br>
+{%endfor%}
+
+
+{% endblock %}

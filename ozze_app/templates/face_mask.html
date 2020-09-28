@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block title %} Защитные маски {% endblock %}
+
+ {% load static %}
+{% block content %}
+
+{% for item in products%}
+<h1><a href="{% url 'face_mask_detail' pk=item.pk%}">{{item.name}}</a></h1>
+<h3>{{item.name}}</h3>
+<h3>{{item.price}}</h3>
+<h3>{{item.color}}</h3>
+<h3>{{item.size}}</h3>
+<h3>{{item.length}}</h3>
+<h3>{{item.fabric_structure}}</h3>
+
+<text>{{item.description}}</text>
+
+<form action ='/face_mask_cart_add/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="AddToCart" value="{{item.id}} {{item.type}}">Добавить в корзину</button>
+</form>
+
+<h3>  <img src = "{{item.picture.url}}" width="300"></h3>
+{%endfor%}
+
+
+{% endblock %}

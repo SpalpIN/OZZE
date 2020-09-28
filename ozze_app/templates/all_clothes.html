@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block title %} Каталог OZZE {% endblock %}
+
+ {% load static %}
+{% block content %}
+{% for item in products%}
+<h3>{{item.name}}</h3>
+<h3>{{item.price}}</h3>
+<h3>{{item.color}}</h3>
+<h3>{{item.size}}</h3>
+<h3>{{item.length}}</h3>
+<h3>{{item.fabric_structure}}</h3>
+
+<text>{{item.description}}</text>
+<h3>Sale {{item.sale}}%</h3>
+{%endfor%}
+
+
+{% endblock %}

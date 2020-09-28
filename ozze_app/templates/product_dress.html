@@ -1,0 +1,122 @@
+{% extends 'main.html' %}
+{% block title %} {{product.code}} {{product.name}} {% endblock %}
+
+ {% load static %}
+{% block content %}
+<!--
+<h3>{{product.name}}</h3>
+<h3>{{product.price}}</h3>
+<h3>{{product.color}}</h3>
+<h3>{{product.size}}</h3>
+<h3>{{product.length}}</h3>
+<h3>{{product.fabric_structure}}</h3>
+
+<text>{{product.description}}</text>
+<h3>Sale {{product.sale}}%</h3>
+<h3>  <img src = "{{product.picture.url}}" width="300"></h3>
+-->
+
+
+    <link rel="stylesheet" href="{%static 'ozze_style/product_page_style.css'%}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<section class="section section-product">
+			<div class="container">
+				<div class="product__wrap">
+				<div class="product__gallery">
+					<div id="slider" class="slider">
+  						<a href="#" class="control_next">></a>
+  						<a href="#" class="control_prev"><</a>
+  						<ul>
+    						<li><img class = "product__gallery-img" src="{{product.picture.url}}" alt=""></li>
+							{% if product.picture2%}
+							<li><img class = "product__gallery-img" src="{{product.picture2.url}}" alt=""></li>
+							{%endif%}
+  						</ul>
+					</div>
+
+				</div>
+
+				<div class="product__form">
+					<div class="catalogPath">
+						<span class="catalogPath-item"><a class = "catalogPath-link" href="/main">Главная</a></span><span class="catalogPath-item"><a href="/dress_catalog" class="catalogPath-link">Платья</a></span>
+					</div>
+					<div class="product__title">
+						<a href="#" class="wish__link"><i id="wishheart" class="far fa-heart"></i></a>
+						<h2>{{product.name}}</h2>
+						<div class="product__title-info">
+							<span class="title-info-item">Артикул: {{product.code}}</span><span class="title-info-item">Категория: Платье</span>
+						</div>
+						<div class="product__title-cost">
+							<h2>{{product.price}}</h2>
+						</div>
+
+					</div>
+					<div class="product__info">
+						<div class="product__info-size">
+							<h3>Размер</h3>
+							<span class="prod-size-list"><button class="prod-size-btn">XS</button>
+							<button class="prod-size-btn">S</button>
+							<button class="prod-size-btn">M</button>
+							<button class="prod-size-btn">L</button>
+							<button class="prod-size-btn">XL</button>
+							<button class="prod-size-btn">XXL</button></span>
+							<div class="prod__info-rowSizeSub">
+								<div class="prod-size-pickUp">
+								<i class="fas fa-ruler-vertical"></i>
+								<button type="Menu"><span>Подобрать размер</span></button>
+								</div>
+								<div class="prod-size-pickUp">
+									<i class="far fa-bell"></i>
+								<button type="Menu"><span>Подписаться на размер</span></button>
+								</div>
+							</div>
+
+							<div class="prod__info-buy-btns">
+								<div class="prod-info-addCart">
+									<form action ='/cart_add/' method="post">
+										{%csrf_token%}
+<!--										<button type="submit" name="add_to_cart" value="{{item.id}}">Добавить в корзину</button>-->
+										<button class = "prod-addCart-btn" type="submit" name="AddToCart" value="{{product.id}} {{product.type}}"><span>Добавить в корзину</span></button>
+									</form>
+								</div>
+								<div class="prod-info-addCart">
+								<button class = "prod-OneClick-btn" type="Menu" name="BuyInOneClick">Купить в один клик</button>
+								</div>
+							</div>
+
+							<div class="prod__info-other-btn">
+								<div class="prod-size-other">
+								<i class="fas fa-box-open"></i>
+								<button type="Menu"><span>Доставка, оплата, возврат</span></button>
+								</div>
+								<div class="prod-size-other">
+									<i class="fas fa-store"></i>
+								<button type="Menu"><span>Наличие в магазине</span></button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				</div>
+			</div>
+		</section>
+		<script src="{%static 'js/product_page/wishheart.js'%}"></script>
+		<script src="{%static 'js/product_page/slider.js'%}"></script>
+
+		<section class="section">
+			<div class="container">
+				<div class="product__description">
+					<div class="description__title">
+						<h2>Описание</h2>
+					</div>
+
+					<div class="description__text">
+						{{product.description}} <br><br>
+						Состав ткани: {{product.fabric_structure}}
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}

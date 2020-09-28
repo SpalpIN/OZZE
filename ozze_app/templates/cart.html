@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% block title %} Корзина {% endblock %}
+{% block content %}
+
+<br>
+{%for coat in coats%}
+<h3>{{coat.code}}</h3>
+<h3>{{coat.name}}</h3>
+<h3>{{coat.price}}</h3>
+<form action ='/cart_del/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="del_from_cart" value="{{coat.id}} {{coat.type}}">Удалить</button>
+</form>
+<br>
+{%endfor%}
+
+{%for dress in dresses%}
+<h3>{{dress.code}}</h3>
+<h3>{{dress.name}}</h3>
+<h3>{{dress.price}}</h3>
+<form action ='/cart_del/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="del_from_cart" value="{{dress.id}} {{dress.type}}">Удалить</button>
+</form>
+<br>
+{%endfor%}
+
+{%for parka in parkas%}
+<h3>{{parka.code}}</h3>
+<h3>{{parka.name}}</h3>
+<h3>{{parka.price}}</h3>
+<form action ='/cart_del/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="del_from_cart" value="{{parka.id}} {{parka.type}}">Удалить</button>
+</form>
+<br>
+{%endfor%}
+
+{%for face_mask in face_masks%}
+<h3>{{face_mask.name}}</h3>
+<h3>{{face_mask.price}}</h3>
+<form action ='/cart_del/' method="post">
+    {%csrf_token%}
+    <button type="submit" name="del_from_cart" value="{{face_mask.id}} {{face_mask.type}}">Удалить</button>
+</form>
+<br>
+{%endfor%}
+
+{% endblock %}

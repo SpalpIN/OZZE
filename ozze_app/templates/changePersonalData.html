@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block title %} Изменение данных {% endblock %}
+
+{% block content %}
+
+<form action ='/changeAccData/' method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+<h4>{{er}}<a type="button" class="btn btn-link"  href="/account">назад</a></h4>
+{% endblock %}
