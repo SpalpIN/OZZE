@@ -71,7 +71,7 @@ class Product(models.Model):
     description = models.TextField()
     sale = models.PositiveSmallIntegerField(default=0, blank=True, validators=[MaxValueValidator(90)],
                                             verbose_name='Sale %')
-    #picture = models.ImageField()
+    picture = models.ImageField()
 
     def __str__(self):
         return '{} {} {}'.format(self.code, self.type_product, self.name)
@@ -92,11 +92,11 @@ class CoatModel(models.Model):
                                           verbose_name='Длина рукава от горловины')
     description = models.TextField()
     sale = models.DecimalField(max_digits=7, decimal_places=2, default=None, null=True, blank=True, verbose_name='Цена со скидкой')
-    # discount_price = models.DecimalField(default=0, blank=True, verbose_name='Цена со скидкой')
-#     picture = models.ImageField(upload_to='coat', verbose_name='Главная картинка')
-#     picture2 = models.ImageField(upload_to='coat', blank=True, null=True)
-#     picture3 = models.ImageField(upload_to='coat', blank=True, null=True)
-#     picture4 = models.ImageField(upload_to='coat', blank=True, null=True)
+    discount_price = models.DecimalField(default=0, blank=True, verbose_name='Цена со скидкой')
+    picture = models.ImageField(upload_to='coat', verbose_name='Главная картинка')
+    picture2 = models.ImageField(upload_to='coat', blank=True, null=True)
+    picture3 = models.ImageField(upload_to='coat', blank=True, null=True)
+    picture4 = models.ImageField(upload_to='coat', blank=True, null=True)
     add_date = models.DateField(default=now)
     type = models.CharField(default='Coat', verbose_name='Не менять', max_length=4)
 
@@ -124,8 +124,8 @@ class DressModel(models.Model):
     color = models.CharField(max_length=7, choices=Product.colors)
     fabric_structure = models.CharField(max_length=60, blank=True, verbose_name='Тип ткани')
     description = models.TextField()
-#     picture = models.ImageField(upload_to='dress', verbose_name='Главная картинка')
-#     picture2 = models.ImageField(upload_to='dress', blank=True, null=True)
+    picture = models.ImageField(upload_to='dress', verbose_name='Главная картинка')
+    picture2 = models.ImageField(upload_to='dress', blank=True, null=True)
     add_date = models.DateField(default=now)
     type = models.CharField(default='Dress', verbose_name='Не менять', max_length=5)
 
@@ -154,9 +154,9 @@ class ParkaModel(models.Model):
     length_sleeve = models.CharField(max_length=30, default='64-66', verbose_name='Длина рукава')
     hood = models.CharField(max_length=10, default='втачной', verbose_name='Капюшон')
     description = models.TextField()
-#     picture = models.ImageField(upload_to='parka', verbose_name='Главная картинка')
-#     picture2 = models.ImageField(upload_to='parka', blank=True, null=True)
-#     picture3 = models.ImageField(upload_to='parka', blank=True, null=True)
+    picture = models.ImageField(upload_to='parka', verbose_name='Главная картинка')
+    picture2 = models.ImageField(upload_to='parka', blank=True, null=True)
+    picture3 = models.ImageField(upload_to='parka', blank=True, null=True)
     add_date = models.DateField(default=now)
     type = models.CharField(default='Parka', verbose_name='Не менять', max_length=5)
 
@@ -173,8 +173,8 @@ class FaceMaskModel(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
     color = models.CharField(max_length=7, choices=Product.colors)
     description = models.TextField()
-#     picture = models.ImageField(upload_to='face_mask')
-#     picture2 = models.ImageField(upload_to='face_mask', blank=True, null=True)
+    picture = models.ImageField(upload_to='face_mask')
+    picture2 = models.ImageField(upload_to='face_mask', blank=True, null=True)
     add_date = models.DateField(default=now)
     type = models.CharField(default='Face_mask', verbose_name='Не менять', max_length=9)
 
