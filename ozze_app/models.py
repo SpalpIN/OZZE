@@ -71,7 +71,7 @@ class Product(models.Model):
     description = models.TextField()
     sale = models.PositiveSmallIntegerField(default=0, blank=True, validators=[MaxValueValidator(90)],
                                             verbose_name='Sale %')
-    picture = models.ImageField()
+    #picture = models.ImageField()
 
     def __str__(self):
         return '{} {} {}'.format(self.code, self.type_product, self.name)
